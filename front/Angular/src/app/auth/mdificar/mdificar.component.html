@@ -1,0 +1,35 @@
+
+<div class='test'>
+  <div style='float: right;'>
+      <button type="button" class="btn btn-dark" (click)="logout()">Log Out</button>
+  </div>
+</div>
+
+<div class="container">
+    <p>modificar material</p>
+    
+    <div class="panel-body" style="height: auto;" align="center">
+        <form class="login-container" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    
+           <div class="col-sm-6">
+            <label for="">NOMBRE</label>
+            <input class="form-control" type="hidden" name="id_proveedor" id="id_proveedor" [(ngModel)]="material.id_proveedor" required>
+            <input class="form-control" type="text" name="nombre" id="nombre" [(ngModel)]="material.nombre" maxlength="50" placeholder="Nombre" required>
+          </div>        
+
+          <div class="col-sm-6">
+            <label for="">DESCRIPCION</label>
+            <input class="form-control" type="text" name="descripcion" id="descripcion" [(ngModel)]="material.descripcion" maxlength="256" placeholder="Descripcion" required>               
+          </div>
+
+
+        <div class="col-sm-6">
+            <br>
+          <button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>  Actualizar</button>
+          <button class="btn btn-danger" routerLink="/auth/proveedores" type="button"><i class="fa fa-arrow-circle-left"></i> Cancelar</button>
+        </div>
+
+      </form>
+    </div>
+
+</div>
